@@ -10,7 +10,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Latest Code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
+      - name: Get Node.js Latest Version
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
       - name: Install Dependencies
         run: npm install
       - name: Run Tests
